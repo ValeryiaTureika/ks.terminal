@@ -1,0 +1,4 @@
+sun
+dog 
+world
+cold

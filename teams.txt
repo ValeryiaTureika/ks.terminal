@@ -1,0 +1,106 @@
+1) Посмотреть где я - pwd
+
+2) Создать папку - mkdir (название папки)
+mkdir new_dir
+
+3) Зайти в папку - cd (путь к папке через /)(если папка находиться в текущей папке, весь путь можно не писать, а только название папки в которую заходим) 
+cd /e/testing/ks/terminal/new_dir
+
+4) Создать 3 папки - mkdir (название 3-х папок через пробел)
+mkdir work work1 work2
+
+5) Зайти в любоую папку - cd (путь к папке через /)
+cd /e/testing/ks/terminal/new_dir/work1
+
+6) Создать 5 файлов (3 txt, 2 json) - touch (название и тип файлов через пробел)
+touch file.txt file1.txt file3.txt file4.json file5.json
+
+7) Создать 3 папки - mkdir (названия папок через пробел)
+mkdir name name1 name2
+ 
+8. Вывести список содержимого папки - ls
+
+9) + Открыть любой txt файл - nano (путь к файлу через /) или cat > (путь к файлу через / и(или) название файла)
+nano /e/testing/ks/terminal/new_dir/work1/file1.txt
+
+10) + написать туда что-нибудь, любой текст. - написать любой текст 
+Hello World
+
+11) + сохранить и выйти. - Ctrl + O - сохранить, Ctrl + X - выйти или Ctrl + С
+
+12) Выйти из папки на уровень выше - cd ..
+
+13) переместить любые 2 файла, которые вы создали, в любую другую папку. - mv (папка, имя файла, папка перемещаемого файла, имя файла) 
+mv work1/file.txt work2/file.txt
+mv work1/file1.txt work2/file1.txt
+
+14) скопировать любые 2 файла, которые вы создали, в любую другую папку. - cp (папка, имя файла, папка перемещаемого файла, имя файла)
+cp work1/file3.txt work/file3.txt
+cp work1/file4.json work/file4.json
+
+15) Найти файл по имени - find -name (поиск по имени) (название файла)
+find -name file.txt
+
+15.1)Перейти в папку work1, изменить файл file3.txt, ввести sun dog world cold, выйти Ctrl + С
+
+16) просмотреть содержимое в реальном времени (команда grep) изучите как она работает. - tail (показывает изменения файла) -f (отслеживания хвоста файла) grep (поиск конкретного слова) опция - С (показать несколько строк до и после искомого термина с опцией) Ctrl + С - выход
+tail -f file3.txt | grep -C 3 dog 
+
+17) вывести несколько первых строк из текстового файла - head -n 2 (путь к файлу и/или имя файла)
+head -n 2 /e/testing/ks/terminal/new_dir/work1/file3.txt
+
+18) вывести несколько последних строк из текстового файла - tail -n 2 (путь к файлу и/или имя файла)
+tail -n 2 /e/testing/ks/terminal/new_dir/work1/file3.txt
+
+19) просмотреть содержимое длинного файла (команда less) изучите как она работает. - less (путь к файлу и имя файла), q для выхода 
+less /e/testing/ks/terminal/new_dir/work1/file3.txt
+
+20) вывести дату и время - date
+ 
+
+  373  pwd
+  374  mkdir new_dir
+  375  cd /e/testing/ks/terminal/new_dir
+  376  mkdir work work1 work2
+  377  cd /e/testing/ks/terminal/new_dir/work1
+  378  touch file.txt file1.txt file3.txt file4.json file5.json
+  379  mkdir name name1 name2
+  380  ls
+  381  nano /e/testing/ks/terminal/new_dir/work1/file1.txt
+  382  cd ..
+  383  mv work1/file.txt work2/file.txt
+  384  mv work1/file1.txt work2/file1.txt
+  385  cp work1/file3.txt work/file3.txt
+  386  cp work1/file4.json work/file4.json
+  387  find -name file.txt
+       cd work 
+  388  cat >> file3.txt
+  389  tail -f file3.txt | grep -C 3 dog
+  390  head -n 2 /e/testing/ks/terminal/new_dir/work1/file3.txt
+  391  tail -n 2 /e/testing/ks/terminal/new_dir/work1/file3.txt
+  392  less /e/testing/ks/terminal/new_dir/work1/file3.txt
+  393  date
+  394  history
+
+
+Задание *
+1) curl  http://162.55.220.72:5006/terminal-hw-request
+curl  "http://162.55.220.72:5005/get_method?name=Lera&age=26"
+
+2)создание файла touch myscript.sh
+вход в редактирование файла myscript.sh - nano myscript.sh
+
+#!/usr/bin/env bash
+set -Eeuo pipefail
+mkdir work3
+cd work3
+mkdir work work1 work2
+touch file.txt file1.txt file3.txt file4.json file5.json
+mkdir name name1 name2
+ls
+cd ..
+mv work1/file3.txt work/file3.txt
+mv work1/file4.json work/file4.json
+
+ 
+запуск sh myscript.sh
